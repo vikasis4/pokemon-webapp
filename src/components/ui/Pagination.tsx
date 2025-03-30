@@ -4,7 +4,7 @@ import usePagination from "@/hooks/usePagination";
 import React, { useState } from "react";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import DropDown from "./DropDown";
-import { BiDownArrow, BiDownArrowAlt } from "react-icons/bi";
+import { BiDownArrowAlt } from "react-icons/bi";
 
 interface PaginationProps {
   totalPages?: number;
@@ -14,6 +14,8 @@ interface PaginationProps {
 export default function Pagination({ siblingCount = 1 }: PaginationProps) {
   const { page, totalPages, updateParams } = usePagination();
   const [currentPage, setCurrentPage] = useState<number>(page);
+
+  React.useEffect(() => setCurrentPage(page), [page]);
 
   const goToPage = (page: number) => {
     if (page >= 1 && page <= totalPages) {
@@ -119,7 +121,6 @@ function ItemsPerPage() {
 
       <DropDown
         options={options}
-        value={itemsPerPage}
         onChange={handleChange}
         isOpen={isOpen}
         setIsOpen={setIsOpen}

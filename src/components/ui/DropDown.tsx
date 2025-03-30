@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 
 interface CustomDropdownProps {
   options: number[];
-  value: number;
   onChange: (value: number) => void;
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -11,7 +10,6 @@ interface CustomDropdownProps {
 
 function DropDown({
   options,
-  value,
   onChange,
   isOpen,
   setIsOpen,

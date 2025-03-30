@@ -7,8 +7,9 @@ import PokemonDetails from "@/modules/pokemon/elements/PokemonDetail";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { usePathname } from "next/navigation";
 import React from "react";
+import PokemonDetailsSkeleton from "./loading";
 
-function page() {
+function Page() {
   const queryClient = useQueryClient();
   const path = usePathname();
   const poekmon = path.split("/")[2];
@@ -20,12 +21,16 @@ function page() {
     queryFn: () => fetchPokemonsData(poekmon),
     initialData: cachedData as FormattedPokemonType,
   });
-  if (!data) return null;
+
   return (
     <BgDropFilter url="/pokemon/backgroundimg.jpg">
-      <PokemonDetails pokemon={data} />
+      {isLoading ? (
+        <PokemonDetailsSkeleton />
+      ) : (
+        <PokemonDetails pokemon={data} />
+      )}
     </BgDropFilter>
   );
 }
 
-export default page;
+export default Page;

@@ -9,7 +9,7 @@ export default function ErrorPage() {
       <CiWarning className="text-6xl" />
         <h2 className="text-4xl text-pink-600/80 font-semibold mb-4">Something went wrong</h2>
         <p className="text-gray-300 text-lg mb-6">
-          We couldn't load the page. Please check your connection or try again.
+          We could not load the page. Please check your connection or try again.
         </p>
       </div>
     </div>

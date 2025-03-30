@@ -20,6 +20,7 @@ export default function Input({ type = "text", label }: inputType) {
   React.useEffect(() => {
     const params = new URLSearchParams(searchParams.toString());
     params.set("query", encodeURIComponent(debouncedValue.toString()));
+    params.set("page", "1");
     router.replace(`?${params.toString()}`, { scroll: false });
   }, [debouncedValue]);
 
