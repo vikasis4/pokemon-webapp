@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  redis:
+    image: vikasdev4046/pokemon:1.0
+    container_name: pokemon
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    command: ["node", "server.js", "--hostname", "0.0.0.0"]
+    networks:
+      - pokemon_network
+
+networks:
+  pokemon_network:
+    driver: bridge
