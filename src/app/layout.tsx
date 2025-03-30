@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pokemon Go",
+  title: "Pokemon Series",
   description: "Pokemon website to check how awsesome it is",
 };
 

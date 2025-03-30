@@ -26,7 +26,7 @@ export const getAllPokemons = async ({
   );
 
   const count = isSearched ? search.length : response.count;
-  
+
   const finaldata = {
     count,
     pokemons,
@@ -36,7 +36,7 @@ export const getAllPokemons = async ({
   return finaldata;
 };
 
-const fetchPokemonsData = async (name: string) => {
+export const fetchPokemonsData = async (name: string) => {  
   const response = await fetch(
     process.env.NEXT_PUBLIC_BASE_API + `pokemon/${name}`
   );

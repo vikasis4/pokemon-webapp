@@ -1,16 +1,22 @@
 import Badge from "@/components/ui/Badge";
 import { FormattedPokemonType } from "@/modules/home/types/home";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 function CardBox(props: FormattedPokemonType) {
+  const router = useRouter();
+
   return (
-    <main className="bg-white/20 border border-white/20 cursor-pointer hover:bg-white/30 hover:shadow-2xl hover:scale-[103%] duration-300 backdrop-blur-sm p-4 shadow-lg shadow-white/20 rounded-lg">
+    <main
+      onClick={() => router.push(`/pokemon/${[props.name]}`)}
+      className="bg-white/20 border border-white/20 cursor-pointer hover:bg-white/30 hover:shadow-2xl hover:scale-[103%] duration-300 backdrop-blur-sm p-4 shadow-lg shadow-white/20 rounded-lg"
+    >
       <section className="flex justify-between items-center gap-2">
         <p className="text-2xl text-center text-white/80 font-mono truncate">
           {props.name}
         </p>
-        <Badge label="Invisible" count={props.abilities.length} />
+        <Badge label={props.abilities[0]} count={props.abilities.length} />
       </section>
       <Image
         src={props.image}

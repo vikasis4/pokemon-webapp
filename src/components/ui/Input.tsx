@@ -30,7 +30,7 @@ export default function Input({ type = "text", label }: inputType) {
       value={text}
       onChange={(e) => setText(e.target.value)}
       placeholder={label}
-      className="w-1/2 text-lg my-4 px-4 py-2 border border-gray-600 bg-gray-900 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+      className="w-[90%] md:w-1/2 text-lg my-4 px-4 py-2 border border-gray-600 bg-gray-900 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
     />
   );
 }

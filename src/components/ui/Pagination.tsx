@@ -1,8 +1,10 @@
 "use client";
 
 import usePagination from "@/hooks/usePagination";
-import { useState } from "react";
+import React, { useState } from "react";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
+import DropDown from "./DropDown";
+import { BiDownArrow, BiDownArrowAlt } from "react-icons/bi";
 
 interface PaginationProps {
   totalPages?: number;
@@ -47,7 +49,7 @@ export default function Pagination({ siblingCount = 1 }: PaginationProps) {
   };
 
   return (
-    <main className="flex justify-between items-center w-[80%] mx-auto my-12">
+    <main className="flex md:flex-row flex-col-reverse gap-4 justify-between items-center w-[80%] mx-auto my-12">
       <ItemsPerPage />
       <section className="flex items-center justify-center space-x-2">
         <button
@@ -93,29 +95,36 @@ export default function Pagination({ siblingCount = 1 }: PaginationProps) {
 function ItemsPerPage() {
   const { limit, updateParams } = usePagination();
 
+  const buttonRef = React.useRef<HTMLButtonElement>(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [itemsPerPage, setItemsPerPage] = useState<number>(limit);
   const options = [8, 16, 24];
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const value = parseInt(event.target.value, 10);
+  const handleChange = (value: number) => {
     setItemsPerPage(value);
     updateParams("limit", value);
   };
 
   return (
-    <div className="flex items-center font-mono text-lg space-x-2">
+    <div className="flex items-center font-mono text-lg space-x-2 relative">
       <span className="text-white">Items per page:</span>
-      <select
+      <button
+        className="bg-gray-800 text-white px-3 py-1 rounded-md focus:ring focus:ring-purple-500 w-[60px]  flex justify-between items-center"
+        onClick={() => setIsOpen(!isOpen)}
+        ref={buttonRef}
+      >
+        {itemsPerPage}
+        <BiDownArrowAlt />
+      </button>
+
+      <DropDown
+        options={options}
         value={itemsPerPage}
         onChange={handleChange}
-        className="bg-gray-800 text-white px-3 py-1 rounded-md focus:ring focus:ring-purple-500"
-      >
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        buttonRef={buttonRef}
+      />
     </div>
   );
 }

@@ -25,9 +25,7 @@ export default async function Home() {
   });
 
   return (
-    <main className="relative h-full overflow-hidden">
-      <BgDropFilter url="/home/hero.jpeg" />
-
+    <BgDropFilter url="/home/hero.jpeg">
       <div className="relative overflow-scoll flex-col z-10 mt-12 flex h-full items-center justify-center text-white text-4xl font-bold scrollbar-hide">
         <HeroSection />
         <HydrationBoundary state={dehydrate(queryClient)}>
@@ -35,6 +33,6 @@ export default async function Home() {
         </HydrationBoundary>
         <Pagination />
       </div>
-    </main>
+    </BgDropFilter>
   );
 }
