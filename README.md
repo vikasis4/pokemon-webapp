@@ -1,11 +1,12 @@
 # Pokémon Search App
 
-![Pokemon App](https://your-image-url.com)  
-*A blazing-fast Pokémon search app with Next.js, Tailwind, and React Query.*
+![Pokemon App](https://imgs.search.brave.com/plHMS74KT1U_k4vfWwhUaI0l6Gk_8jNcjFEUh0bE4io/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9wbmdp/bWcuY29tL3VwbG9h/ZHMvcG9rZW1vbl9s/b2dvL3NtYWxsL3Bv/a2Vtb25fbG9nb19Q/TkcxMi5wbmc)
+
+*A blazing-fast Pokémon search app built with Next.js, Tailwind, and React Query.*
 
 ## 🚀 Live Demo
 
-🔗 [Open Pokémon App](https://pokemon.vecna.online)
+🔗 **[Open Pokémon App](https://pokemon.vecna.online)**
 
 ---
 
@@ -63,10 +64,10 @@ npm run start
 ---
 
 ## ⚡ Features
-✅ **SSR Optimized** – Lightning-fast page loads with Next.js
-✅ **Smart Caching** – Optimized with React Query for better UX
-✅ **Trie-based Search** – Efficient and scalable search implementation
-✅ **Beautiful UI** – Clean and intuitive design with Tailwind CSS
+✅ **SSR Optimized** – Lightning-fast page loads with Next.js  
+✅ **Smart Caching** – Optimized with React Query for better UX  
+✅ **Trie-based Search** – Efficient and scalable search implementation  
+✅ **Beautiful UI** – Clean and intuitive design with Tailwind CSS  
 
 ---
 
@@ -76,4 +77,3 @@ MIT License © 2025 Vikas Dev
 ---
 
 💡 *Contributions, issues, and feature requests are welcome!* 🎉
-
