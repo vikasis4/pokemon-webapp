@@ -12,6 +12,9 @@
 
 ## 📦 Getting Started
 
+### 📜 Set up the enviroment variables
+.env.example is provided, copy the variables from there to .env.development, .env.production or .env
+
 ### 🐳 Run with Docker
 For a quick setup, you can run the project using Docker:
 
